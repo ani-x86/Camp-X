@@ -1,23 +1,23 @@
-# CampX: Campus Exchange Marketplace [cite: 1]
+# CampX: Campus Exchange Marketplace 
 
 **Reference File:** CampX.pdf
 
 ## Team Members
-* Aniruddha Udekar [cite: 1]
-* Chandrashekhar Patil [cite: 1]
-* Danish Khatik [cite: 1]
-* Manish [cite: 1]
+* Aniruddha Udekar 
+* Chandrashekhar Patil
+* Danish Khatik 
+* Manish 
 
 ## Project Description (CampusXchange)
-We are building CampusXchange to solve the chaotic cycle of students wasting money on new semester essentials while graduating peers throw away perfectly good items. [cite: 1] By creating a trusted, verified student-only marketplace, we eliminate the safety risks and friction of generic online classifieds—making it seamless for students to buy and sell affordable textbooks, electronics, and dorm gear right on campus. [cite: 1]
+We are building CampusXchange to solve the chaotic cycle of students wasting money on new semester essentials while graduating peers throw away perfectly good items. [cite: 1] By creating a trusted, verified student-only marketplace, we eliminate the safety risks and friction of generic online classifieds—making it seamless for students to buy and sell affordable textbooks, electronics, and dorm gear right on campus.
 
 ## Objectives
-* Develop a closed-loop online marketplace that enables students and teachers to buy and sell products within the university community. [cite: 1]
-* To implement PRN-based user verification by using the university roll number as a unique identifier for account verification and trust scoring. [cite: 1]
-* To provide a web-based marketplace interface using React.js for product browsing, seller management, cart functionality, and checkout. [cite: 1]
-* To develop a native Android application using Java and CameraX, including a "Snap & Sell" feature that allows sellers to upload product images directly through the device camera. [cite: 1]
+* Develop a closed-loop online marketplace that enables students and teachers to buy and sell products within the university community. 
+* To implement PRN-based user verification by using the university roll number as a unique identifier for account verification and trust scoring. 
+* To provide a web-based marketplace interface using React.js for product browsing, seller management, cart functionality, and checkout. 
+* To develop a native Android application using Java and CameraX, including a "Snap & Sell" feature that allows sellers to upload product images directly through the device camera.
 
-## Technology Stack [cite: 1]
+## Technology Stack
 | Layer | Technology | Purpose |
 | :--- | :--- | :--- |
 | **Web Frontend** | React.js | Dashboard, product grid, cart state, seller UI |
@@ -27,31 +27,31 @@ We are building CampusXchange to solve the chaotic cycle of students wasting mon
 | **Image Storage** | Cloudinary (or AWS S3) | Hosting product photos uploaded by sellers |
 | **Payments** | Razorpay API | Order creation, checkout, webhook-verified transactions |
 
-## Tools, Libraries & Algorithms [cite: 1]
-* **Authentication:** JWT (JSON Web Tokens) issued at login, verified on every request stateless, no server-side sessions. [cite: 1]
-* **Payments:** Razorpay Orders API (backend) + Checkout SDK (frontend); HMAC signature verification on incoming webhooks before confirming an order. [cite: 1]
-* **File uploads:** Multer (Node.js) middleware to handle multipart/form-data from the camera/file picker before forwarding to Cloudinary. [cite: 1]
-* **QR generation:** qrcode library (Node.js/Python) encoding seller PRN + trust tag as JSON, embedded in the receipt. [cite: 1]
-* **PDF receipts:** server-side PDF generation library combining transaction details with the QR image. [cite: 1]
-* **Email delivery:** Nodemailer (Node.js) or SendGrid/SMTP (Python) to send the receipt to the buyer's registered email. [cite: 1]
-* **UI animation:** LottieFiles lightweight JSON animations for the post-payment success screen (Web + Android). [cite: 1]
-* **Cart state:** Redux (React) on web; Room/ViewModel (Java) on Android. [cite: 1]
+## Tools, Libraries & Algorithms
+* **Authentication:** JWT (JSON Web Tokens) issued at login, verified on every request stateless, no server-side sessions.
+* **Payments:** Razorpay Orders API (backend) + Checkout SDK (frontend); HMAC signature verification on incoming webhooks before confirming an order. 
+* **File uploads:** Multer (Node.js) middleware to handle multipart/form-data from the camera/file picker before forwarding to Cloudinary. 
+* **QR generation:** qrcode library (Node.js/Python) encoding seller PRN + trust tag as JSON, embedded in the receipt.
+* **PDF receipts:** server-side PDF generation library combining transaction details with the QR image. 
+* **Email delivery:** Nodemailer (Node.js) or SendGrid/SMTP (Python) to send the receipt to the buyer's registered email. 
+* **UI animation:** LottieFiles lightweight JSON animations for the post-payment success screen (Web + Android). 
+* **Cart state:** Redux (React) on web; Room/ViewModel (Java) on Android. 
 
-## Development Approach & Key Techniques [cite: 1]
-* **Methodology:** Iterative/Agile, built in four phases rather than all at once. [cite: 1]
-* **RESTful API design:** clean endpoints (e.g. GET/api/products, POST/api/orders) shared by both React and Java clients. [cite: 1]
-* **Backend-verified payments:** the frontend never confirms a sale; Razorpay's webhook (signature-checked) is the only source of truth for payment success. [cite: 1]
-* **PRN-based identity:** university roll number used as a unique index for account verification and trust scoring. [cite: 1]
-* **Post-payment automation pipeline:** verify webhook → generate QR → generate PDF receipt → email buyer → trigger frontend success animation. [cite: 1]
+## Development Approach & Key Techniques 
+* **Methodology:** Iterative/Agile, built in four phases rather than all at once. 
+* **RESTful API design:** clean endpoints (e.g. GET/api/products, POST/api/orders) shared by both React and Java clients. 
+* **Backend-verified payments:** the frontend never confirms a sale; Razorpay's webhook (signature-checked) is the only source of truth for payment success. 
+* **PRN-based identity:** university roll number used as a unique index for account verification and trust scoring. 
+* **Post-payment automation pipeline:** verify webhook → generate QR → generate PDF receipt → email buyer → trigger frontend success animation. 
 
-## Data Collections (MongoDB Schema) [cite: 1]
+## Data Collections (MongoDB Schema) 
 | Collection | Key Fields |
 | :--- | :--- |
 | **Users** | fullName, prn (unique), branch, year, mobile, email, trustScore |
 | **Products** | sellerId (ref), title, description, price, imageUrl, status (Available/In Cart/Sold) |
 | **Transactions** | buyerId, productId (refs), razorpayOrderld, razorpayPaymentId, status, receiptUrl |
 
-## Timeline & Team Roles (3 Students, 6-8 Weeks) [cite: 1]
+## Timeline & Team Roles (3 Students, 6-8 Weeks)
 | Student | Role | Primary Focus |
 | :--- | :--- | :--- |
 | **Danish** | Web Frontend | React.js dashboard, cart, checkout UI |
