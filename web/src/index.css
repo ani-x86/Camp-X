@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Inter:wght@400;500&family=Space+Grotesk:wght@600;700&display=swap');
+
+:root {
+  --color-primary: #26365B;
+  --color-primary-light: #3C517E;
+  --color-accent: #E8A33D;
+  --color-success: #2F8F6F;
+  --color-danger: #C6493F;
+  --color-bg: #FAFAF9;
+  --color-surface: #FFFFFF;
+  --color-border: #E3E3E0;
+  --color-text-primary: #1B1E24;
+  --color-text-secondary: #5D6270;
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-badge: 12px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-5);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: opacity 150ms ease, background-color 150ms ease;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+button.primary {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+}
+
+button.primary:hover {
+  opacity: 0.9;
+}
+
+button.secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+button.secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+}
+
+button.destructive {
+  background-color: transparent;
+  color: var(--color-danger);
+  border: 1px solid var(--color-danger);
+}
+
+input {
+  font-family: var(--font-body);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  font-size: 1rem;
+  width: 100%;
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+input:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+label {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-1);
+  display: block;
+}
+
+.form-group {
+  margin-bottom: var(--space-4);
+}
+
+.error-text {
+  color: var(--color-danger);
+  font-size: 0.875rem;
+  margin-top: var(--space-1);
+  font-weight: 500;
+}
+
+.caption {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+
+/* Base layouts */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+.card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  padding: var(--space-5);
+}
+
+/* Mobile optimizations */
+@media (max-width: 599px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .container {
+    padding: 0 var(--space-4);
+  }
+}
